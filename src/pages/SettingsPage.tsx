@@ -1138,7 +1138,7 @@ function AutoRotateCard() {
                   onCommit={(raw) => onNumberCommit("min_remaining_credits", raw)}
                 />
                 <p className="pt-1 text-[13px] leading-5 text-muted-foreground">
-                  切换时机：目标账号剩余到期时间少于「紧迫阈值」且比当前账号早超过「差异阈值」，且目标剩余积分不低于「最小剩余积分」。检测到有 CodeBuddy CLI 会话在运行时，本次轮换会跳过并在当日最多提示 5 次；重启 CLI 后新账号才会生效。
+                  切换时机：目标账号剩余到期时间少于「紧迫阈值」且比当前账号早超过「差异阈值」，且目标剩余积分不低于「最小剩余积分」。另外，当前账号的某个模型触发限流时，会绕过上述阈值，直接换到未受限且积分最早到期的账号（仍遵守切换冷却）；所有账号都在限流或处于冷却期时只提示、不切换。检测到有 CodeBuddy CLI 会话在运行时，本次轮换会跳过并在当日最多提示 5 次；重启 CLI 后新账号才会生效。
                 </p>
               </div>
             </AccordionSettingsRow>
